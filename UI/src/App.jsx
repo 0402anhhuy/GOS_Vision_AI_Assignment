@@ -18,7 +18,7 @@ function App() {
 
         try {
             const response = await fetch(
-                "https://gos-vision-ai-assignment-be.onrender.compredict",
+                "https://gos-vision-ai-assignment-be.onrender.com/predict",
                 {
                     method: "POST",
                     body: formData,
