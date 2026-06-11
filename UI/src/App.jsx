@@ -17,10 +17,13 @@ function App() {
         formData.append("file", imageData.file);
 
         try {
-            const response = await fetch("http://localhost:8000/predict", {
-                method: "POST",
-                body: formData,
-            });
+            const response = await fetch(
+                "https://gos-vision-ai-assignment-be.onrender.compredict",
+                {
+                    method: "POST",
+                    body: formData,
+                },
+            );
 
             if (!response.ok) {
                 const errorData = await response.json();
