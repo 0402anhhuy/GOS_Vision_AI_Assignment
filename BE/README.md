@@ -1,6 +1,6 @@
-# Vision AI - Backend API (FastAPI)
+# GOS Vision AI Assignment - Backend
 
-Đây là mã nguồn Backend cho dự án Phân loại ảnh Chó Mèo (Cat or Dog Classification). API này được xây dựng bằng **FastAPI** và sử dụng mô hình học sâu **PyTorch** để dự đoán nhãn của hình ảnh.
+Đây là mã nguồn Backend cho dự án phân loại ảnh chó mèo. API này được xây dựng bằng **FastAPI** và sử dụng mô hình học sâu **PyTorch** để dự đoán nhãn của hình ảnh
 
 ## 📁 Cấu trúc thư mục Backend
 
@@ -13,41 +13,42 @@ BE/
 └── README.md                          # Tài liệu hướng dẫn
 ```
 
-## 🚀 Hướng dẫn chạy thử trên máy cá nhân (Local)
+## Hướng dẫn chạy thử trên máy cá nhân
 
-### Yêu cầu hệ thống:
+### Yêu cầu hệ thống
 
 - Đã cài đặt **Python 3.9+**
 
-### Các bước cài đặt và khởi chạy:
+### Các bước cài đặt và khởi chạy
 
-1. **Di chuyển vào thư mục `BE`**:
+1. **Di chuyển vào thư mục `BE`**
 
     ```bash
     cd BE
     ```
 
-2. **Tạo môi trường ảo (Virtual Environment) - Tuỳ chọn nhưng khuyên dùng**:
+2. **Tạo môi trường ảo**
 
     ```bash
     python -m venv .venv
     .venv/Scripts/activate
     ```
 
-3. **Cài đặt thư viện**:
-   Cài đặt tất cả các dependencies từ file `requirements.txt`:
+3. **Cài đặt thư viện**
+   Cài đặt tất cả các dependencies từ file `requirements.txt`
 
     ```bash
     pip install -r requirements.txt
     ```
 
-4. **Khởi động Server FastAPI**:
+4. **Khởi động Server FastAPI**
     ```bash
     uvicorn main:app --reload
     ```
-    Nếu console hiện thông báo `Model loaded successfully.` và `Uvicorn running on http://0.0.0.0:8000`, API của bạn đã sẵn sàng hoạt động
+    Nếu console hiện thông báo `Model loaded successfully.` và `Uvicorn running on http://0.0.0.0:8000`, API đã sẵn sàng hoạt động
 
-### Test API:
+### Test API
 
 Sau khi chạy, bạn có thể truy cập trang tài liệu Swagger UI tự động của FastAPI tại:
 `http://127.0.0.1:8000/docs` để kiểm tra API `/predict` bằng cách upload thử 1 bức ảnh
+và xem kết quả dự đoán
