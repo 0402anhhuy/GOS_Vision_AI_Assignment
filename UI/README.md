@@ -1,16 +1,60 @@
-# React + Vite
+# GOS Vision AI Assignment - Frontend UI (React & Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Đây là mã nguồn Frontend (Giao diện người dùng) cho dự án Phân loại ảnh Chó Mèo (Cat or Dog Classification)
+Giao diện được xây dựng bằng **React** kết hợp với công cụ build siêu tốc **Vite**, mang lại trải nghiệm người dùng mượt mà, trực quan với các hiệu ứng chuyển động hiện đại
 
-Currently, two official plugins are available:
+## Công nghệ sử dụng
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Core:** React 19, Vite
+- **Styling:** Vanilla CSS (Sử dụng CSS thuần kết hợp biến `--var` để quản lý màu sắc và thiết kế theo phong cách Glassmorphism).
+- **Icons:** `lucide-react`
+- **Giao tiếp API:** Sử dụng `fetch` API tiêu chuẩn của trình duyệt
 
-## React Compiler
+## 📁 Cấu trúc thư mục UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```text
+UI/
+├── src/
+│   ├── components/
+│   │   ├── ClassificationResult.jsx  # Component hiển thị kết quả phân loại
+│   │   └── ImageUploader.jsx         # Component xử lý tải ảnh lên (kéo thả, click, dán)
+│   ├── App.jsx                       # Component chính kết nối giao diện và Backend API
+│   ├── App.css                       # Chứa CSS phụ
+│   ├── index.css                     # Chứa toàn bộ CSS cốt lõi
+│   └── main.jsx                      # File khởi chạy React
+├── package.json                      # Quản lý các thư viện npm
+└── vite.config.js                    # Cấu hình cho Vite
+```
 
-## Expanding the ESLint configuration
+## Hướng dẫn chạy thử trên máy local
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Yêu cầu hệ thống:
+
+- Đã cài đặt **Node.js** và **npm**
+
+### Các bước khởi chạy:
+
+1. **Mở Terminal và di chuyển vào thư mục `UI`**:
+
+    ```bash
+    cd UI
+    ```
+
+2. **Cài đặt các gói thư viện (Dependencies)**:
+
+    ```bash
+    npm install
+    ```
+
+3. **Cấu hình đường dẫn API**:
+   Mặc định ứng dụng đang trỏ tới API đã deploy trên Render. Nếu bạn muốn chạy test với Backend ở dưới máy tính cá nhân của bạn, hãy mở file `src/App.jsx` và đổi link fetch thành:
+   `http://localhost:8000/predict`
+
+4. **Khởi động chế độ Development Server**:
+
+    ```bash
+    npm run dev
+    ```
+
+5. **Truy cập web**:
+   Mở trình duyệt web của bạn và truy cập vào địa chỉ `http://localhost:5173`. Giao diện sẽ tự động làm mới (hot-reload) khi bạn sửa code
